@@ -31,6 +31,7 @@ if ($resultado->num_rows == true) {
 <th>Preço de Venda</th>
 <th>quantidade minima</th>
 <th>quantidade no estoque</th>
+<th>Opções</th>
 
 </tr>';
 
@@ -45,6 +46,10 @@ if ($resultado->num_rows == true) {
     echo '<td> ' . $row['preco_venda'] . ' R$' . '</td>';
     echo '<td> ' . $row['quantidade_minima'] . '</td>';
     echo '<td> ' . $row['quantidade_estoque'] . '</td>';
+ 
+    echo '<td> ' . '<a href=cadastrarVendasBanco.php?id='. $row['id_produto'] .'> Vender produto </a>' . '<br>';
+
+    echo  '<a href=deletarProdutoBanco.php?id='. $row['id_produto'] .'> Deletar produto </a>' . '<br>';
     echo '</tr>';
   }
 
