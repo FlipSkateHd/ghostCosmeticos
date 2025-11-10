@@ -11,7 +11,7 @@
 session_start();
 
 include 'conexao.php';
-$tabela = "produtos";
+$tabela = "vendas";
 
 
 $busca = $_POST['busca'];
@@ -24,13 +24,10 @@ if ($resultado->num_rows == true) {
   echo '
 <table>
     <tr>
-<th>Produto</th>
-<th>Marca</th>
-<th>Setor</th>
-<th>Preço de custo</th>
-<th>Preço de Venda</th>
-<th>quantidade minima</th>
-<th>quantidade no estoque</th>
+<th>Id de Venda</th>
+<th>Id do produto</th>
+<th>Data de venda</th>
+<th>quantidade vendida</th>
 
 </tr>';
 
@@ -38,13 +35,10 @@ if ($resultado->num_rows == true) {
   while ($row = $resultado->fetch_assoc()) { // Código para exibir os produtos:
 
     echo '<tr>';
-    echo '<td> ' . $row['nome_produto'] . '</td>';
-    echo '<td> ' . $row['marca_produto'] . '</td>';
-    echo '<td> ' . $row['setor_produto'] . '</td>';
-    echo '<td> ' . $row['preco_custo'] . ' R$' . '</td>';
-    echo '<td> ' . $row['preco_venda'] . ' R$' . '</td>';
-    echo '<td> ' . $row['quantidade_minima'] . '</td>';
-    echo '<td> ' . $row['quantidade_estoque'] . '</td>';
+    echo '<td> ' . $row['id_venda'] . '</td>';
+    echo '<td> ' . $row['id_produto_vendido'] . '</td>';
+    echo '<td> ' . $row['data_venda']  . '</td>';
+    echo '<td> ' . $row['quantidade_vendida'] . '</td>';
     echo '</tr>';
   }
 
@@ -55,5 +49,5 @@ if ($resultado->num_rows == true) {
 }
 
 ?>
-
+<h3><a href="cadastrarProduto.php"> Cadastrar nova venda </a></h3>
 </html>

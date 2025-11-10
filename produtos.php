@@ -56,6 +56,8 @@ if ($resultado->num_rows == true) {
 
 ?>
 <h3><a href="cadastrarProduto.php"> Cadastrar novo produto </a></h3>
+<h3><a href="index.php"> Voltar </a></h3>
+
 
 
 
