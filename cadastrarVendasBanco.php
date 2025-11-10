@@ -9,4 +9,3 @@ $sql = "INSERT INTO $tabela (`id_produto_vendido`, `data_venda`, `quantidade_ven
   VALUES ('[value-1]','[value-2]','[value-3]','[value-4]' )
   ;" ;
 
-echo  $idProduto ;
